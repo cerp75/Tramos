@@ -1,0 +1,895 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+  <!-- InstanceBeginEditable name="doctitle" -->
+  <title>SIAGF</title>
+  <!-- InstanceEndEditable --> 
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link href="/siagf/css/03_gest.css" rel="stylesheet" type="text/css">
+  <link href="/siagf/css/00_gral.css" rel="stylesheet" type="text/css">
+  <script language="JavaScript" src="../js/generic.js" type="text/JavaScript"></script>
+  <!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+  
+  <script type="text/javascript">
+  <!--
+  
+  var show=false;
+  //Hasta un maximo de 100 tuplas
+  var arreglo = new Array(100);
+  
+  function verTramos(pos){
+    if(arreglo[pos]==1){
+      show=true;
+    }else{
+      show=false;
+    }
+    
+    var ver="";
+    // desplegar
+    if(show){
+      document.getElementById("div_tramos_"+pos).style.display='none';
+      ver="<img src=\"/siagf/images/ea/conCau_ver002.png\" border=\"0\" alt=\"Ver Tramos\">"; // ver
+      document.getElementById("showtramos_"+pos).innerHTML=ver;
+      show=false;
+      arreglo[pos]=0;
+    }
+    // Ocultar
+    else{
+      document.getElementById("div_tramos_"+pos).style.display='';
+      ver="<img src=\"/siagf/images/ea/conCau_ocultar002.png\" border=\"0\" alt=\"Ocultar Tramos\">"; // ocultar
+      document.getElementById("showtramos_"+pos).innerHTML=ver;
+      show=true;
+      arreglo[pos]=1;
+    }	
+  }
+  
+    function verifyCheck() {
+      var oForm = document.frmInfo;
+      var len = oForm.elements.length;
+      
+      for(var i = 0; i < len; i++ ){
+        var elem = oForm.elements[i];
+        if ( elem.type == 'radio' && elem.name == 'chkid' ){
+          if (elem.checked) {
+            return true;			
+          }
+        };
+      }
+      
+      return false;
+    }	
+  
+    function doSend() {
+      if (!verifyCheck()) {
+        alert('Debe seleccionar una tupla.');
+        return;
+      }
+        
+      var oForm = document.frmInfo;
+      oForm.action = 'detalleTupla.jsp';
+      oForm.submit();
+    }
+  
+    function consCausante(causante){
+      var oForm = document.frmConsultaCausante;
+      oForm.elements['txtRut'].value = causante;
+      oForm.submit();
+      return true;
+    }
+  //-->
+  </script>
+  
+  </head>
+  
+  <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('/siagf/images/ea/i_01inic_f2.jpg','/siagf/images/ea/i_06reportes_f2.jpg','/siagf/images/ea/i_07panel_f2.jpg','/siagf/images/ea/pest_reconocimiento_f2.jpg')">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td background="/siagf/images/00_fdo.jpg"><!--Fondo Blanco de la celda superior-->
+  <!--Top Gral ini -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <td background="/siagf/images/00_fdo.jpg">
+     
+  
+  <link rel="SHORTCUT ICON" href="/siagf/images/icoGob.ico" />
+  <script language="JavaScript" src="/siagf/js/functions.js" type="text/JavaScript"></script>
+  <script language="JavaScript" src="/siagf/js/generic.js" type="text/JavaScript"></script>
+  
+  
+  
+  <script type="text/javascript">
+                function doLogout() {
+                  var oForm = document.frmLogout;
+                  oForm.submit();
+                }
+                function dominio(root){
+                  wmail = Popwin(root + '/ea/dominiopup.jsp','Dominio','scrollbars=yes,status=no,menubar=no,resizable=no',900,480);
+                }
+  </script>
+  <form name="frmLogout" method="post" action="/siagf/checkLogout.jsp">
+    <input type="hidden" name="logout" value="true"/></form>          
+       <td>
+      <div id="LyUsuario" style="position:absolute; left:37%; top:-38px; width:270px; height:70px; z-index:1"> 
+                      <!-- Tabla para usuario -->
+                      <table width="260" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr> 
+                          <td width="260" height="35" background="/siagf/images/01ini_r1_c15.gif">
+                            <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                              <tr> 
+                                <td width="35%" class="txtTrebuchet11"><strong>Datos Usuario</strong></td>
+                                <td width="65%" class="txtTrebuchet11">: patricio ascencio castillo</td>
+                              </tr>
+                              <tr> 
+                                <td class="txtTrebuchet11"><strong>Empresa</strong></td>
+                                <td class="txtTrebuchet11">: C.C.A.F. LOS HEROES</td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr> 
+                          <td nowrap><a href="#" onMouseOver="MM_showHideLayers('LyUsuario2','','hide','LyUsuario','','show')">
+                          <img src="/siagf/images/01ini_r4_c15.gif" width="114" height="20" border="0"></a>
+                          <a href="#" onClick="MM_showHideLayers('LyUsuario','','hide','LyUsuario2','','show')" 
+                          onMouseOver="MM_swapImage('usuario','','/siagf/images/01ini_r4_c19_f2.gif',1)" 
+                          onMouseOut="MM_swapImgRestore()"><img src="/siagf/images/00_verinfo.gif" alt="Ver Informaci&oacute;n" name="usuario" width="146" height="20" border="0"></a></td>
+                        </tr>
+                        <tr>
+                          <td nowrap>&nbsp;</td>
+                        </tr>
+                      </table>
+                    </div>
+      <div id="LyUsuario2" style="position:absolute; left:37%; top:0px; width:270px; height:70px; z-index:2; visibility: hidden;"> 
+                      <!-- Tabla para usuario -->
+                      <table width="260" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr> 
+                          <td width="260" height="35" background="/siagf/images/01ini_r1_c15.gif">
+                            <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                              <tr> 
+                                <td width="35%" class="txtTrebuchet11"><strong>Datos Usuario</strong></td>
+                                <td width="65%" class="txtTrebuchet11">: patricio ascencio castillo</td>
+                              </tr>
+                              <tr> 
+                                <td class="txtTrebuchet11"><strong>Empresa</strong></td>
+                                <td class="txtTrebuchet11">: C.C.A.F. LOS HEROES</td>
+                              </tr>
+                            </table></td>
+                        </tr>
+                        <tr> 
+                          <td nowrap>
+                <a href="#" onClick="MM_showHideLayers('LyUsuario','','show','LyUsuario2','','hide')">
+                  <img src="/siagf/images/00_infousu_cerrar.gif" width="114" height="20" border="0"/></a>
+                <a href="#" onClick="Popwin('/siagf/changePasswd2.jsp?b=1','ventana','scrollbars=no,status=no,menubar=no,resizable=no',230,182); return false;" onMouseOver="MM_swapImage('usuario','','/siagf/images/01ini_r4_c19_f2.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="/siagf/images/01ini_r4_c192.gif" alt="Modificar Informaci&oacute;n" name="usuario" width="146" height="20" border="0"></a>
+        </td>
+                        </tr>
+                      </table>
+                    </div>
+      </td>
+  
+  
+            <td width="32%" valign="middle" background="/siagf/images/00_fdoblco0.jpg"> 
+                <div align="center"><img src="/siagf/images/top/logo.jpg" width="180" height="64"></div>
+          </td>
+            <td width="5%" valign="top"><img src="/siagf/images/00_fdoblco1.jpg" width="28" height="88"></td>
+            <td width="43%" valign="top"></td>
+  
+  
+            
+            <!-- DOMINIOS -->
+            <td width="20%" valign="top"> 
+          <div align="right">
+                    <a href="javascript:dominio('/siagf');" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('dominio','','/siagf/images/top/01ini_r1_c32_d2.gif',1)"><img src="/siagf/images/top/01ini_r1_c32_d1.gif" alt="Dominio" name="dominio" border="0" id="dominio"></a>
+                  </div>
+         </td>
+         <!-- WIKI -->
+         <td width="20%" valign="top"> 
+          <div align="right">
+                    <a href="http://wiki.siagf.paperless.cl/Wiki/" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('wiki','','/siagf/images/top/01ini_r1_c32_w2.gif',1)"><img src="/siagf/images/top/01ini_r1_c32_w1.gif" alt="Wiki" name="wiki" border="0" id="wiki"></a>
+                  </div>
+         </td>
+         <!-- SALIR -->
+         <td width="20%" valign="top"> 
+          <div align="right">
+                    <a href="#" onclick="javascript:doLogout();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('salir','','/siagf/images/top/01ini_r1_c32_f2.gif',1)"><img src="/siagf/images/top/01ini_r1_c32.gif" alt="Salir" name="salir" border="0" id="salir"></a>
+                  </div>
+         </td>
+  
+  
+         
+         
+         
+         
+          </tr>
+          </table> </td>
+          </tr>
+          <tr> 
+            <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" background="/siagf/images/00_fdo.jpg">
+                <tr>
+                  <td width="100%" align="center"><B style='font-size:20'>SITIO SOLO DE PRUEBAS . Sitio Oficial http://siagf.paperless.cl/siagf/</B></td>
+                </tr>
+                <tr> 
+                  <td width="100%" align="center">
+                  <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                  <td valign="bottom" style="padding-right: 4px">
+                      <a href="/siagf/ea/inicio.jsp"                     onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Inicio1','','/siagf/images/top/inicio_f2.jpg',1)">                  <img src="/siagf/images/top/01ini_r7_c8.jpg"            alt="Inicio"                    name="Inicio1"    width="63" height="32" border="0" id="Inicio1"></a>
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">
+                  
+                    <a href="/siagf/parte4_1/ingreso/ingresoManual_1.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('gestion11','','/siagf/images/top/ingreso_reconocimiento_f2.jpg',1)"><img src="/siagf/images/top/ingreso_reconocimiento.jpg" alt="Ingreso de Reconocimiento" name="gestion11" width="108" height="37" border="0" id="gestion11"></a>
+                  
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">
+                  
+                      <a href="/siagf/parte4_1/extincion/consultaCausante.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('gestion12','','/siagf/images/top/extincion_rec_f2.jpg',1)"><img src="/siagf/images/top/extincion_rec.jpg" alt="Extincion de Reconocimiento" name="gestion12" width="108" height="37" border="0" id="gestion12"></a>
+                  
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">
+                  
+                     <a href="/siagf/parte4_1/anulacion/consultaCausante.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('gestion19','','/siagf/images/top/anulacion_rec_f2.jpg',1)"><img src="/siagf/images/top/anulacion_rec.jpg" alt="Anulacion de Reconocimiento" name="gestion19" width="108" height="37" border="0" id="gestion19"></a>
+                  
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">
+                  
+                      <a href="/siagf/parte4_1/consulta/consultaCausante.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('gestion13','','/siagf/images/top/consulta_causante_f2.jpg',1)"><img src="/siagf/images/top/consulta_causante.jpg" alt="Consulta de Causante" name="gestion13" width="108" height="37" border="0" id="gestion13"></a>
+                  
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">	
+                  
+                    <a href="/siagf/parte4_1/actualizar/consultaCausante.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('gestion14','','/siagf/images/top/act_causante_f2.jpg',1)"><img src="/siagf/images/top/act_causante.jpg" alt="Actualizar Causante" name="gestion14" width="108" height="37" border="0" id="gestion14"></a>
+                  
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">
+                  
+                    <a href="/siagf/parte3/reportes_gestion.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('reportes1','','/siagf/images/top/01ini_r7_c27_f2.jpg',1)"><img src="/siagf/images/top/01ini_r7_c27.jpg" alt="Reportes de Gesti?n" name="reportes1" width="103" height="32" border="0" id="reportes1"></a>
+                  
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">
+                   
+                      <a href="/siagf/parte1/1panel.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('panel1','','/siagf/images/top/01ini_r7_c29_f2.jpg',1)"><img src="/siagf/images/top/01ini_r7_c29.jpg" alt="Panel de Control" name="panel1" width="103" height="32" border="0" id="panel1"></a>
+                  
+                  </td>
+                  <td valign="bottom" style="padding-right: 4px">
+                  
+                  <a href="/siagf/parte5/inicioEA.jsp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('sivegam','','/siagf/images/sivegam/sivegam_verde.jpg',1)"><img src="/siagf/images/sivegam/sivegam_gris.jpg" alt="Acceso a SIVEGAM" name="sivegam" width="103" height="32" border="0" id="sivegam"></a>
+                  
+                  
+                  </td>
+                  </tr>
+                  </table>
+                 </td>
+               
+                </tr>
+              </table></td>
+          </tr> 
+      </td>
+    </tr>
+  <!-- fin BAJO TOP -->
+    </tr>
+    <tr>
+    <!--Medio ini cambia color por css --> 
+      <td class="bgMedio" height="18"><img src="/siagf/images/spacer.gif" width="39" height="18"></td><!--Medio fin-->
+    </tr>
+    <tr>
+      <td valign="top">
+        <!--Marco  ini -->
+        <table width="97%" border="0" cellpadding="0" cellspacing="0">
+          <tr> 
+  <!--Left ini -->   
+   <td width="16%" rowspan="2" valign="top"> 
+              <table width="150" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="28" class="txtTrebuchet10"> 
+                    <!-- La fecha desde servidor???-->
+                    <div align="center"><font color="#FFFFFF">1 de junio de 2022</font> 
+                    </div></td>
+                </tr>
+                <tr> 
+                  <td><img src="/siagf/images/ea/reconocimiento_gr.gif"></td>
+                </tr>
+              </table> 
+              <br>
+            </td>
+            <td valign="top" width="2%" class="bgIzq"> 
+              <!-- Fondo Izq Contenido ini-->
+              <table width="41" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td width="41" height="31"><img src="/siagf/images/ea/07pan_tizq.gif" alt="" name="n01ini_r9_c4" width="41" height="31" border="0"></td>
+                </tr>
+                <tr> 
+                  <td class="bgIzq"> 
+                    <!-- imagen para darle el alto minimo a la celda -->
+                    <img src="/siagf/images/spacer.gif" width="10" height="392"></td>
+                </tr>
+              </table>
+              <!-- Fondo Izq Contenido fin-->
+            </td> 
+  <!--Left fin -->
+            <td valign="top" width="76%" bgcolor="#FFFFFF"> 
+              <!-- Centro Contenido ini color de fondo blco-->
+              <!-- InstanceBeginEditable name="RegCentro" --> 
+              <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="31" class="txtRuta"><img src="/siagf/images/spacer.gif" width="10" height="10"> 
+                    <a href="/siagf/ea/inicio.jsp">Inicio</a> > <a href="consultaCausante.jsp">Actualizar Causante</a> > Resultado</td>
+                </tr>
+                <tr> 
+                  <td class="txtInterior"><br>
+            
+                      <span class="txtTrebuchet12color"><strong>Entidad Administradora: </strong></span>C.C.A.F. LOS HEROES<br>
+                      <span class="txtTrebuchet12color"><strong>R.U.N.: </strong></span>21255777-3<br>
+                      <span class="txtTrebuchet12color"><strong>Nombre: </strong></span>LETELIER GUTIERREZ VICTOR ANTONIO<br>
+                    
+                    <form name="frmInfo" method="post" action="">
+                      <br>
+                      <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr> 
+                          <td colspan="2">
+                            <table width="157" border="0" align="left" cellpadding="0" cellspacing="0">
+                                <tr> 
+                                  <td width="157" class="tbNarjBitac01">
+                                    <strong><font color="#FFFFFF">Detalle</font></strong>
+                                  </td>
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr> 
+                          <td colspan="2">
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                              <tr>
+                              <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">&nbsp;</td> 
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">&nbsp;</td> 
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">R.U.T<a href="javascript:;" onClick="MM_swapImage('Image1','','images/02fact_flecha2.gif',1)" onDblClick="MM_swapImgRestore()"></a> 
+                                    <br>
+                                    Beneficiario</div></td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Nombre <br>
+                                    Beneficiario</div></td>
+                                       <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Fecha <br>
+                                    Transaccion</div></td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Fecha<a href="javascript:;" onClick="MM_swapImage('Image1','','images/02fact_flecha2.gif',1)" onDblClick="MM_swapImgRestore()"></a> 
+                                    <br>
+                                    Reconocimiento</div></td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Fecha<br>
+                                    Extinsi&oacute;n</div></td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Entidad <br>
+                                    Administradora </div></td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Tipo<br>
+                                    Beneficio</div></td>
+                                <!-- 
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Monto<br>
+                                    Beneficio </div></td>
+                                    
+                                -->    
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Tipo<br>Causante</div>
+                                </td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">R.U.T<a href="javascript:;" onClick="MM_swapImage('Image1','','images/02fact_flecha2.gif',1)" onDblClick="MM_swapImgRestore()"></a> 
+                                    <br>
+                                    Empleador</div></td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"> 
+                                  <div align="center">Nombre<a href="javascript:;" onClick="MM_swapImage('Image1','','images/02fact_flecha2.gif',1)" onDblClick="MM_swapImgRestore()"></a> 
+                                    <br>
+                                    Empleador</div></td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdo"><div align="center">Estado</div></td>
+                              </tr>
+                              
+                              <tr>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  
+                                  <input type="radio" name="chkid" value="26861360" />
+                                   
+                                </td>
+                                 <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  <a href="javascript:verTramos(1)">
+                                  <span id="showtramos_1">
+                                  <img alt="" src="/siagf/images/ea/conCau_ver002.png" border="0">
+                                  </span>
+                                  </a>
+                                </td>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  <a href="javascript:consCausante('14017944-2')">
+                                    <div align="center">14017944-2 </div>
+                                  </a>
+                                  
+                                </td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">LETELIER GONZALEZ JOSE</div></td>
+                                 
+                                   <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                
+                                  <div align="center">2016-08-12 11:37:38</div></td>
+                               
+                                  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">&nbsp;2010-01-01</div></td>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">&nbsp;2012-03-31</div></td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">C.C.A.F. LOS HEROES</div></td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">ASIGNACION FAMILIAR</div></td>
+                                <!--  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">$  </div></td>
+                                -->  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">HIJO INCLUIDO EL ADOPTADO Y EL HIJASTRO, MENOR O IGUAL A 18 ANOS </div>
+                                </td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">78355450-K&nbsp;</div></td>
+                                <td width="0" class="tbColorLinCeldaFdoBlca"> <div align="center">JAIME BOSCH B E HIJOS CIA LTDA&nbsp;</div></td>
+                                <td width="0" class="tbColorLinCeldaFdoBlca">RECONOCIMIENTO EXTINGUIDO</td>
+                              </tr>
+                              
+                              
+                                <tr>
+                  <td colspan="13" align="center" class="tbColorLinCeldaFdoBlca">
+                  <div id="div_tramos_1" style="display: none">
+                  
+                  
+                  <table class="tableRecoRetro">
+                  <tr>
+                    
+                                             <td colspan="4" class="tbColor02RecoRetr">&nbsp;&nbsp;&nbsp;&nbsp;<strong>Tramos</strong></td>
+                                                                      
+                                </tr>
+                    <tr>
+                      <td align="center" class="tbColor01RecoRetr" > <strong> Periodo </strong></td>
+                                    <td align="center" class="tbColor01RecoRetr" > <strong> Tramo </strong> </td>
+                                  
+                                  <td align="center" class="tbColor01RecoRetr" > <strong> Ingreso Promedio </strong></td>
+                                  
+                                  <td align="center" class="tbColor01RecoRetr" > <strong> Asignacion </strong></td>
+                    </tr>
+                    
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">2011 </td>
+                                        <td align="center" class="tbColor00RecoRetr">187.516-307.863</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">307863 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">5064 </td>	
+                              </tr>
+                                 
+                              </table>
+                   
+                  
+                  </div>
+                  </td>
+                  </tr> 
+                              
+                              
+                              
+                              <tr>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  
+                                  <input type="radio" name="chkid" value="26861434" />
+                                   
+                                </td>
+                                 <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  <a href="javascript:verTramos(2)">
+                                  <span id="showtramos_2">
+                                  <img alt="" src="/siagf/images/ea/conCau_ver002.png" border="0">
+                                  </span>
+                                  </a>
+                                </td>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  <a href="javascript:consCausante('14017944-2')">
+                                    <div align="center">14017944-2 </div>
+                                  </a>
+                                  
+                                </td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">LETELIER GONZALEZ JOSE</div></td>
+                                 
+                                   <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                
+                                  <div align="center">2016-08-12 11:44:48</div></td>
+                               
+                                  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">&nbsp;2012-04-01</div></td>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">&nbsp;2015-06-30</div></td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">C.C.A.F. LOS HEROES</div></td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">ASIGNACION FAMILIAR</div></td>
+                                <!--  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">$  </div></td>
+                                -->  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">CONYUGE (MUJER) </div>
+                                </td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">78355450-K&nbsp;</div></td>
+                                <td width="0" class="tbColorLinCeldaFdoBlca"> <div align="center">JAIME BOSCH B E HIJOS CIA LTDA&nbsp;</div></td>
+                                <td width="0" class="tbColorLinCeldaFdoBlca">RECONOCIMIENTO EXTINGUIDO</td>
+                              </tr>
+                              
+                              
+                                <tr>
+                  <td colspan="13" align="center" class="tbColorLinCeldaFdoBlca">
+                  <div id="div_tramos_2" style="display: none">
+                  
+                  
+                  <table class="tableRecoRetro">
+                  <tr>
+                    
+                                             <td colspan="4" class="tbColor02RecoRetr">&nbsp;&nbsp;&nbsp;&nbsp;<strong>Tramos</strong></td>
+                                                                      
+                                </tr>
+                    <tr>
+                      <td align="center" class="tbColor01RecoRetr" > <strong> Periodo </strong></td>
+                                    <td align="center" class="tbColor01RecoRetr" > <strong> Tramo </strong> </td>
+                                  
+                                  <td align="center" class="tbColor01RecoRetr" > <strong> Ingreso Promedio </strong></td>
+                                  
+                                  <td align="center" class="tbColor01RecoRetr" > <strong> Asignacion </strong></td>
+                    </tr>
+                    
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">2014 </td>
+                                        <td align="center" class="tbColor00RecoRetr">236.095-344.840</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">344840 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">5672 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">2013 </td>
+                                        <td align="center" class="tbColor00RecoRetr">220.355-321.851</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">321851 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">5294 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">2012 </td>
+                                        <td align="center" class="tbColor00RecoRetr">202.517-317.407</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">317407 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">5221 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">2011 </td>
+                                        <td align="center" class="tbColor00RecoRetr">187.516-307.863</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">307863 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">5064 </td>	
+                              </tr>
+                                 
+                              </table>
+                   
+                  
+                  </div>
+                  </td>
+                  </tr> 
+                              
+                              
+                              
+                              <tr>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  
+                                  <input type="radio" name="chkid" value="26861629" />
+                                   
+                                </td>
+                                 <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  <a href="javascript:verTramos(3)">
+                                  <span id="showtramos_3">
+                                  <img alt="" src="/siagf/images/ea/conCau_ver002.png" border="0">
+                                  </span>
+                                  </a>
+                                </td>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca">
+                                  <a href="javascript:consCausante('14017944-2')">
+                                    <div align="center">14017944-2 </div>
+                                  </a>
+                                  
+                                </td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">LETELIER GONZALEZ JOSE</div></td>
+                                 
+                                   <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                
+                                  <div align="center">2016-08-12 12:06:33</div></td>
+                               
+                                  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">&nbsp;2015-07-01</div></td>
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">&nbsp;</div></td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">C.C.A.F. LOS HEROES</div></td>
+                                <td width="0" height="0" class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">ASIGNACION FAMILIAR</div></td>
+                                <!--  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">$  </div></td>
+                                -->  
+                                <td width="0" height="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">HIJO INCLUIDO EL ADOPTADO Y EL HIJASTRO, MENOR O IGUAL A 18 ANOS </div>
+                                </td>
+                                <td width="0" nowrap class="tbColorLinCeldaFdoBlca"> 
+                                  <div align="center">78355450-K&nbsp;</div></td>
+                                <td width="0" class="tbColorLinCeldaFdoBlca"> <div align="center">JAIME BOSCH B E HIJOS CIA LTDA&nbsp;</div></td>
+                                <td width="0" class="tbColorLinCeldaFdoBlca">RECONOCIMIENTO VIGENTE</td>
+                              </tr>
+                              
+                              
+                                <tr>
+                  <td colspan="13" align="center" class="tbColorLinCeldaFdoBlca">
+                  <div id="div_tramos_3" style="display: none">
+                  
+                  
+                  <table class="tableRecoRetro">
+                  <tr>
+                    
+                                             <td colspan="4" class="tbColor02RecoRetr">&nbsp;&nbsp;&nbsp;&nbsp;<strong>Tramos</strong></td>
+                                                                      
+                                </tr>
+                    <tr>
+                      <td align="center" class="tbColor01RecoRetr" > <strong> Periodo </strong></td>
+                                    <td align="center" class="tbColor01RecoRetr" > <strong> Tramo </strong> </td>
+                                  
+                                  <td align="center" class="tbColor01RecoRetr" > <strong> Ingreso Promedio </strong></td>
+                                  
+                                  <td align="center" class="tbColor01RecoRetr" > <strong> Asignacion </strong></td>
+                    </tr>
+                    
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">201803 </td>
+                                        <td align="center" class="tbColor00RecoRetr">302.201-441.395</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">350750 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">7259 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">201802 </td>
+                                        <td align="center" class="tbColor00RecoRetr">289.609-423.004</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">350750 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">6957 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">201801 </td>
+                                        <td align="center" class="tbColor00RecoRetr">289.609-423.004</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">350000 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">6957 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">201702 </td>
+                                        <td align="center" class="tbColor00RecoRetr">283.313-413.808</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">332108 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">6806 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">201701 </td>
+                                        <td align="center" class="tbColor00RecoRetr">277.017-404.613</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">404613 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">6655 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">201602 </td>
+                                        <td align="center" class="tbColor00RecoRetr">270.197-394.651</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">317710 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">6491 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">201601 </td>
+                                        <td align="center" class="tbColor00RecoRetr">262.327-383.156</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">383156 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">6302 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">2015 </td>
+                                        <td align="center" class="tbColor00RecoRetr">252.883-369.362</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">284928 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">6075 </td>	
+                              </tr>
+                              
+                 
+                                  <tr>
+                                        <td align="center" class="tbColor00RecoRetr">2003 </td>
+                                        <td align="center" class="tbColor00RecoRetr">112.099-226.519</td>
+                                      
+                                        <td align="center" class="tbColor00RecoRetr">0 </td>
+                                              
+                                        <td align="center" class="tbColor00RecoRetr">7259 </td>	
+                              </tr>
+                                 
+                              </table>
+                   
+                  
+                  </div>
+                  </td>
+                  </tr> 
+                              
+                              
+  
+                            </table></td>
+                        </tr>
+                        <!-- 
+                        <tr> 
+                          <td colspan="2">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr> 
+                                <td background="/images/ea/03gest_tbc.gif"><img src="/images/ea/03gest_tbi.gif" width="30" height="12"></td>
+                                <td background="/images/ea/03gest_tbc.gif"><img src="/images/ea/03gest_tbc.gif" width="9" height="12"></td>
+                                <td background="/images/ea/03gest_tbc.gif"><div align="right"><img src="/images/ea/03gest_tbd.gif" width="30" height="12"></div></td>
+                              </tr>
+                            </table></td>
+                        </tr>
+                        -->
+                        <tr> 
+                          <td colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                <td colspan="2"> 
+                  <div align="center"><a href="javascript:doSend();"><img src="/siagf/images/ea/04/aceptar.jpg" width="155" height="28" border="0"></a></div></td>
+              </tr>
+                        <tr> 
+                          <td width="50%"> <div align="center"><br>
+                            </div></td>
+                          <td width="50%"><div align="center"><br>
+                            </div></td>
+                        </tr>
+                      </table>
+                      <p>&nbsp;</p>
+                    </form>
+                    <br> 
+                   
+                  </td>
+                </tr>
+              </table>
+              <!-- InstanceEndEditable --> 
+              <!-- Centro Contenido fin-->
+            </td>
+            <td valign="top" width="2%" class="bgDer"> 
+              <!-- Fondo Der Contenido ini-->
+              <table width="41" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td width="41" height="31"><img src="/siagf/images/ea/07pan_tder.gif" width="41" height="31"></td>
+                </tr>
+                <tr> 
+                  <td class="bgDer"><img src="/siagf/images/spacer.gif" width="10" height="392"></td>
+                </tr>
+              </table>
+              <!-- Fondo Der Contenido fin-->
+            </td>
+            <td width="2%"> 
+              <!-- Celda por si...-->
+            </td>
+          </tr>
+          <tr> 
+            <td class="bgIzq">&nbsp;</td>
+            <td valign="top"> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+  <!-- ini BAJO RUTA -->
+                <tr> 
+                  <td class="txtRuta">&nbsp;</td>
+                </tr>
+                 
+              
+                <tr> 
+                  <td class="txtPaperless"><div align="center"><img src="/siagf/images/ruta/01ini_r17_c11.jpg" width="28" height="21" align="absmiddle"> 
+                      COPYRIGHT &copy; 2022, Paperless.<br>
+                      <!-- imagen para darle el ancho minimo a la celda -->
+                      <img src="/siagf/images/spacer.gif" width="533" height="10"></div></td>
+                </tr>
+              
+  <!-- fin BAJO RUTA -->
+              </table>
+    </td>
+            <td class="bgDer">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      <!--Marco ini -->
+      </td>
+    </tr>
+  </table>
+  
+  <form name="frmConsultaCausante" method="post" action="procConsultaCausante.jsp">
+    <input type="hidden" name="txtRut" value=""/>
+  </form>
+  
+  </body>
+  <!-- InstanceEnd -->
+  
+  </html>
+  
+  
