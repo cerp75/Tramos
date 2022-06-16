@@ -1,0 +1,26 @@
+Listado de rutas de carpetas
+El n£mero de serie del volumen es C0000100 8688:3792
+C:.
++---ActualizaS
+|   |   ActualizaS.application
+|   |   setup.exe
+|   |   
+|   \---Application Files
+|       \---ActualizaS_1_0_0_0
+|               ActualizaS.application
+|               ActualizaS.exe.config.deploy
+|               ActualizaS.exe.deploy
+|               ActualizaS.exe.manifest
+|               Util.dll.deploy
+|               
+\---ConsultaS
+    |   ConsultaS.application
+    |   setup.exe
+    |   
+    \---Application Files
+        \---ConsultaS_1_0_0_0
+                ConsultaS.application
+                ConsultaS.exe.config.deploy
+                ConsultaS.exe.deploy
+                ConsultaS.exe.manifest
+                

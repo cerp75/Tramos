@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ConsultaS.exe" version="1.0.0.0" publicKeyToken="928b3f4f7fc77986" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ConsultaS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ConsultaS.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si quiere cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsultaS.exe" size="38840">
+      <assemblyIdentity name="ConsultaS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kXZuUNMWue/xY0eilLWH/Tgn36+f8NQV1mSp4YX36i8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ConsultaS.exe.config" size="185">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wRV9ytWxljVHH9BJaDs0Mi5poYCu9p1Fu898hRtNies=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=NXNOTE01\crist" issuerKeyHash="00f467d0e6546e801d5df1d26c054493143f875e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>27qTF+HbVaGm5Nhe1qPy87Sg40Au6VhnzOjxXNeMOE4=</DigestValue></Reference></SignedInfo><SignatureValue>0BuLgSN6UARkfajj8KmdC7LSgAwWYgWjJFi4iQDbW+8QF24b1KRT2cxrHM/pagc3ljC/Ha00v9wuLUhA4Gf25fR/ZTBsLp5OO5idLuyIv9DHGQKjaG6yay1Ioj4sqDu9LTEpasNlbz6OQlPfEoOrWraXubyc2At1dNEWKajBxFE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>1xOhMu7jFq/pMttq913zuuWX9WQ5MvENc+2Ib1XlwRpIDrVCxx7U+giPHRdyoFrhpr9kgDmtMRXlYhrTaxhTi9yLNQ0Cp01JIe8CzBzqHcGj7HFun7I9H6ZEp73ae7aYq8IjCWjxXCSq67URvrc1csarsEoh2y30If522/EMx6k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="4e388cd75cf1e8cc6758e92e40e3a0b4f3f2a3d65ed8e4a6a155dbe11793badb" Description="" Url=""><as:assemblyIdentity name="ConsultaS.exe" version="1.0.0.0" publicKeyToken="928b3f4f7fc77986" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=NXNOTE01\crist</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Ep+9gk5RbhkvAAZmdylLX/bEOc25JZkcePiAL6nuWpk=</DigestValue></Reference></SignedInfo><SignatureValue>lKknnf0KsuFOZ0Jtn3f7lnJ2yyWbqhXoXOFJJgR7uQj9PDaCthQmRkVix1aQ+arQRgEICCgEyZYz8USG6igz08Nyh/Bd3LRk6zd2zXJofwK3hdCfIHvFRAKFyafV+OX+bzfvnvmePo6h5zEdahMHHWy4uxfdxaC5TOH7Yk9zxko=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>1xOhMu7jFq/pMttq913zuuWX9WQ5MvENc+2Ib1XlwRpIDrVCxx7U+giPHRdyoFrhpr9kgDmtMRXlYhrTaxhTi9yLNQ0Cp01JIe8CzBzqHcGj7HFun7I9H6ZEp73ae7aYq8IjCWjxXCSq67URvrc1csarsEoh2y30If522/EMx6k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQfJIBvTbMfIZGh2RHvzEZOTANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwATgBYAE4ATwBUAEUAMAAxAFwAYwByAGkAcwB0MB4XDTIyMDYxNTIyNDM1N1oXDTIzMDYxNjA0NDM1N1owJzElMCMGA1UEAx4cAE4AWABOAE8AVABFADAAMQBcAGMAcgBpAHMAdDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1xOhMu7jFq/pMttq913zuuWX9WQ5MvENc+2Ib1XlwRpIDrVCxx7U+giPHRdyoFrhpr9kgDmtMRXlYhrTaxhTi9yLNQ0Cp01JIe8CzBzqHcGj7HFun7I9H6ZEp73ae7aYq8IjCWjxXCSq67URvrc1csarsEoh2y30If522/EMx6kCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCO7x5GZcr8HH6KD/2+AF70l0sPr5iosU12BmAF7rxKBJED9H+IrLw7FawDUU2ZN9YIzpn9aNcieUCDgie5aocgLJb6r7wE+9L6nNpwaLw56PsNdos4fBy3zG4fL2tpRsa1ew+f7Jm/758CmErD3kGnuK24XhwxXYMNnqnQri9baQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
